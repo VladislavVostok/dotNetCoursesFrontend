@@ -23,12 +23,12 @@ export const login = async (email, password) => {
   }
 };
 
-export const register = async (full_name, email, password, user_name ) => {
+export const register = async (fullName, email, password, userName ) => {
   try {
     const { data } = await axios.post('Auth/register', {
-      full_name,
+      fullName,
       email,
-      user_name,
+      userName,
       password
     });
 
@@ -39,7 +39,7 @@ export const register = async (full_name, email, password, user_name ) => {
     return {
       data: null,
       error:
-        `${error.response.data.full_name} - ${error.response.data.email}` ||
+        `${error.response.data.fullName} - ${error.response.data.email}` ||
         "Something went wrong",
     };
   }
