@@ -10,6 +10,8 @@ export const login = async (email, password) => {
       password,
     });
 
+    console.log(data.access);
+    
     if (status === 200) {
       setAuthUser(data.access, data.refresh);
     }
